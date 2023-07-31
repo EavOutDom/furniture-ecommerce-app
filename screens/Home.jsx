@@ -1,12 +1,12 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import styles from "./home.style";
 import { Ionicons, Fontisto } from "@expo/vector-icons";
 import { Welcome } from "../components";
-import { ScrollView } from "react-native";
 import Carousel from "../components/home/Carousel";
 import Headings from "../components/home/Headings";
+import ProductRow from "../components/products/ProductRow";
 
 const Home = () => {
   return (
@@ -25,10 +25,11 @@ const Home = () => {
           </View>
         </View>
       </View>
-      <ScrollView>
+      <ScrollView style={{ marginBottom: 100 }}>
         <Welcome />
         <Carousel />
         <Headings />
+        <ProductRow />
       </ScrollView>
     </SafeAreaView>
   );
