@@ -1,18 +1,7 @@
 import { StyleSheet } from "react-native";
-import { COLORS, SIZES } from "../../constants/theme";
+import { COLORS, SIZES } from "../constants/theme";
 
 const styles = StyleSheet.create({
-  container: {
-    width: '100%'
-  },
-  welcomeTxt: (color, top) => ({
-    fontFamily: 'bold',
-    lineHeight: 50,
-    fontSize: SIZES.xxLarge - 10,
-    marginTop: top,
-    marginHorizontal: SIZES.small,
-    color: color
-  }),
   searchContainer: {
     flexDirection: 'row',
     justifyContent: 'center',

@@ -4,8 +4,10 @@ import styles from "./welcome.style";
 import { COLORS, SIZES } from "../../constants/theme";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import { TextInput } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const Welcome = () => {
+  const navigator = useNavigation();
   return (
     <View>
       <View style={styles.container}>
@@ -36,7 +38,6 @@ const Welcome = () => {
           />
         </TouchableOpacity>
       </View>
-      <View></View>
     </View>
   );
 };
