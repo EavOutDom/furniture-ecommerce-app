@@ -36,7 +36,7 @@ export default function App() {
         headerShown: false
       }}>
         <Stack.Screen name='Bottom Navigation' component={BottomTabNavigation} />
-        <Stack.Screen name='Cart' component={Cart} />
+        {/* <Stack.Screen name='Cart' component={Cart} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
