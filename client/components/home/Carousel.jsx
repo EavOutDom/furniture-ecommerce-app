@@ -1,6 +1,5 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
-import { SliderBox } from "react-native-image-slider-box";
 import { COLORS, SIZES } from "../../constants/theme";
 import { ImageSlider } from "react-native-image-slider-banner";
 
@@ -12,12 +11,6 @@ const Carousel = () => {
   ];
   return (
     <View style={styles.carouselContainer}>
-      {/* <SliderBox
-        images={slides}
-        dotColor={COLORS.primary}
-        inactiveDotColor={COLORS.secondary}
-        ImageComponentStyle={{ borderRadius: 15, marginTop: 15, width: "95%" }}
-      /> */}
       <ImageSlider
         data={[
           {

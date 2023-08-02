@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
   ratingText: {
     color: COLORS.gray,
     fontFamily: 'medium',
+    marginBottom: -4,
     paddingHorizontal: SIZES.xSmall
   },
   descriptionWrapper: {
@@ -105,19 +106,20 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.black,
     padding: SIZES.small / 2,
     borderRadius: SIZES.large,
-    marginLeft: 20
+    marginLeft: 20,
   },
   cartTitle: {
     marginLeft: SIZES.small,
     color: COLORS.lightWhite,
     fontFamily: 'semibold',
-    fontSize: SIZES.medium
+    fontSize: SIZES.medium,
+    paddingTop: 4,
   },
   addCart: {
     margin: SIZES.small,
-    width: 37,
-    height: 37,
-    borderRadius: 37,
+    width: 38,
+    height: 38,
+    borderRadius: 38,
     backgroundColor: COLORS.black,
     justifyContent: 'center',
     alignItems: 'center'
