@@ -16,17 +16,15 @@ const styles = StyleSheet.create({
     width: SIZES.width - 44
   },
   img: {
-    height: '50%',
     width: '100%',
+    height: '100%',
     resizeMode: 'cover',
   },
   details: {
-    marginTop: -SIZES.large,
+    marginTop: -SIZES.small,
     backgroundColor: COLORS.lightWhite,
-    width: SIZES.width,
     borderTopLeftRadius: SIZES.medium,
     borderTopRightRadius: SIZES.medium,
-    height: '100%'
   },
   titleRow: {
     marginHorizontal: 20,
