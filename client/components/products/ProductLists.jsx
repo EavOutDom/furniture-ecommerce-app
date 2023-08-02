@@ -19,6 +19,7 @@ const ProductLists = () => {
       <FlatList
         data={data}
         numColumns={2}
+        style={{ marginBottom: SIZES.small }}
         renderItem={({ item }) => <ProductCardView item={item} />}
         contentContainerStyle={styles.container}
         ItemSeparatorComponent={() => <View style={{ height: 16 }} />}

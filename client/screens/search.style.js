@@ -35,6 +35,11 @@ const styles = StyleSheet.create({
     borderRadius: SIZES.medium,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  searchImg: {
+    resizeMode: 'contain',
+    height: SIZES.height - 300,
+    width: SIZES.width - 100
   }
 });
 

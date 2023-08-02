@@ -14,7 +14,7 @@ const useFetch = (url = "") => {
   const fetchData = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.get("http://192.168.101.67:8085/api/products");
+      const res = await axios.get(API + "products");
       setData(await res.data);
     } catch (e) {
       console.log(e)

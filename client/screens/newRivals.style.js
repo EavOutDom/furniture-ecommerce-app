@@ -26,7 +26,8 @@ const styles = StyleSheet.create({
     fontFamily: 'semibold',
     fontSize: SIZES.medium,
     color: COLORS.lightWhite,
-    marginLeft: 5
+    marginLeft: 5,
+    marginBottom: -2
   }
 });
 
