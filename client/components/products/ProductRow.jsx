@@ -3,9 +3,9 @@ import React from "react";
 // import styles from "./productRow.style";
 import { COLORS, SIZES } from "../../constants/theme";
 import { FlatList } from "react-native";
-import ProductCardView from "./ProductCardView";
 import { StyleSheet } from "react-native";
 import useFetch from "../../hook/useFetch";
+import ProductCardView from "./ProductCardView";
 
 const ProductRow = () => {
   const { data, isLoading, isError } = useFetch();
