@@ -22,7 +22,7 @@ const ProductLists = () => {
         style={{ marginBottom: SIZES.small }}
         renderItem={({ item }) => <ProductCardView item={item} />}
         contentContainerStyle={styles.container}
-        ItemSeparatorComponent={() => <View style={{ height: 16 }} />}
+        ItemSeparatorComponent={() => <View />}
       />
     </View>
   );

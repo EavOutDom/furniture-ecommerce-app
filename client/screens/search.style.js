@@ -39,7 +39,13 @@ const styles = StyleSheet.create({
   searchImg: {
     resizeMode: 'contain',
     height: SIZES.height - 300,
-    width: SIZES.width - 100
+    width: SIZES.width - 70,
+    opacity: 0.9
+  },
+  loadContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   }
 });
 

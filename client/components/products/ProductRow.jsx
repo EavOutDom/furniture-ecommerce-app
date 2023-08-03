@@ -20,9 +20,8 @@ const ProductRow = () => {
         <FlatList
           data={data}
           keyExtractor={(item) => item._id}
-          renderItem={({ item }) => <ProductCardView item={item}/>}
+          renderItem={({ item }) => <ProductCardView item={item} />}
           horizontal
-          contentContainerStyle={{ columnGap: SIZES.medium }}
         />
       )}
     </View>
@@ -33,8 +32,6 @@ export default ProductRow;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: SIZES.medium,
-    marginHorizontal: 12,
     marginBottom: 20,
   },
 });

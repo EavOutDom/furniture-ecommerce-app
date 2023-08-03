@@ -15,7 +15,7 @@ const ProductDetails = ({ navigation }) => {
   const route = useRoute();
   const { item } = route.params;
   const [count, setCount] = useState(1);
-  const scroll = useRef(new Animated.Value(0)).current;
+  const scrollY = useRef(new Animated.Value(0)).current;
 
   const handleIncrement = () => {
     setCount((pre) => pre + 1);
@@ -40,7 +40,7 @@ const ProductDetails = ({ navigation }) => {
           scrollEventThrottle={5}
           showsVerticalScrollIndicator={false}
           onScroll={Animated.event(
-            [{ nativeEvent: { contentOffset: { y: scroll } } }],
+            [{ nativeEvent: { contentOffset: { y: scrollY } } }],
             { useNativeDriver: true }
           )}
         >
@@ -48,7 +48,7 @@ const ProductDetails = ({ navigation }) => {
             style={{
               height: SIZES.height / 2,
               width: SIZES.width,
-              transform: [{ translateY: Animated.multiply(scroll, 1) }],
+              transform: [{ translateY: Animated.multiply(scrollY, 1) }],
             }}
           >
             <Image style={styles.img} source={{ uri: item.imageUrl }} />
