@@ -10,9 +10,9 @@ module.exports = {
         const existingProduct = cart.products.find(
           (product) => product.cartItem.toString() === cartItem);
         if (existingProduct) {
-          existingProduct.quantity += 1;
+          existingProduct.quantity += quantity;
         } else {
-          cart.products({ cartItem, quantity });
+          cart.products.push({ cartItem, quantity });
         }
         await cart.save();
         return res.status(200).json({ message: 'Product added to cart' });
@@ -28,7 +28,7 @@ module.exports = {
         return res.status(200).json({ message: 'Product added to cart' });
       }
     } catch (e) {
-      return res.status(500).json(e);
+      res.status(500).json(e);
     }
   },
   getCart: async (req, res) => {
@@ -37,14 +37,14 @@ module.exports = {
       const cart = await Cart.find({ userId }).populate('products.cartItem', '_id title supplier price imageUrl');
       return res.status(200).json(cart);
     } catch (e) {
-      return res.status(500).json(e);
+      res.status(500).json(e);
     }
   },
   deleteCartItem: async (req, res) => {
-    const { cartItemId } = req.body;
+    const { cartItemId } = req.params;
     try {
       const updatedCart = await Cart.findOneAndUpdate(
-        { 'products.id': cartItemId },
+        { 'products._id': cartItemId },
         { $pull: { products: { _id: cartItemId } }, },
         { new: true }
       );
