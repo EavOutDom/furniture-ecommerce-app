@@ -12,7 +12,7 @@ To list all emulator run:
 emulator -list-avds
 ```
 
-Choose an emulator then run:
+Choose an emulator:
 
 ```
 emulator -avd Nexus_5X_API_30

@@ -10,26 +10,25 @@ module.exports = {
     });
     try {
       await newUser.save();
-      res.status(201).json('User created successfully');
+      res.status(201).json({ message: 'User created successfully' });
     } catch (e) {
-      res.status(500).json({ error: true, message: e });
+      res.status(500).json(e);
     }
   },
   login: async (req, res) => {
     try {
       const user = await User.findOne({ email: req.body.email });
-      !user && res.status(401).json('Wrong credentials, provide a valid email');
-      const decryptedPassword = CryptoJS.AES.decrypt(req.body.password, process.env.SECRET);
+      if (!user) { return res.status(401).json({ message: 'Wrong credentials, provide a valid email' }); }
+      const decryptedPassword = CryptoJS.AES.decrypt(user.password, process.env.SECRET.toString());
       const decryptedPass = decryptedPassword.toString(CryptoJS.enc.Utf8);
-      !decryptedPass && res.status(401).json('Wrong password');
+      if (decryptedPass !== req.body.password) { return res.status(401).json({ message: 'Wrong password' }); }
       const userToken = jwt.sign({
         id: user.id
       }, process.env.JWT_SECRET, { expiresIn: '7d' });
-
-      const { password, _v, createdAt, updatedAt, ...userData } = user._doc;
-      res.status(200).json({ ...userData, token: userToken });
+      const { password, __v, createdAt, updatedAt, ...userData } = user._doc;
+      return res.status(200).json({ ...userData, token: userToken });
     } catch (e) {
-      res.status(500).json({ error: true, message: e });
+      return res.status(500).json(e);
     }
   }
 }
