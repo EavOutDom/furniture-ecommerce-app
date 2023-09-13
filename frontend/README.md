@@ -6,7 +6,7 @@ change directory to local sdk:
 
 `C:\Users\User\AppData\Local\Android\Sdk\emulator`
 
-To list all emulator run:
+To list all emulator:
 
 ```
 emulator -list-avds
