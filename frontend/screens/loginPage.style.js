@@ -15,6 +15,30 @@ const styles = StyleSheet.create({
     fontSize: SIZES.xLarge,
     marginBottom: SIZES.xxLarge
   },
+  label: {
+    fontFamily: 'regular',
+    fontSize: SIZES.xSmall,
+    textAlign: 'right',
+    marginBottom: 5,
+    marginEnd: 5
+  },
+  inputWrapper: (borderColor) => ({
+    borderWidth: 1,
+    borderColor: borderColor,
+    backgroundColor: COLORS.lightWhite,
+    height: 55,
+    borderRadius: 12,
+    flexDirection: 'row',
+    paddingHorizontal: 15,
+    alignItems: 'center'
+  }),
+  errorMessage: {
+    color: COLORS.red,
+    fontFamily: 'regular',
+    marginTop: 5,
+    marginLeft: 5,
+    fontSize: SIZES.xSmall
+  }
 });
 
 export default styles;
