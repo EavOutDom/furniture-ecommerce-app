@@ -14,6 +14,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { COLORS } from "../constants/theme";
+import { Alert } from "react-native";
 
 const validationSchema = Yup.object().shape({
   password: Yup.string()
@@ -24,6 +25,12 @@ const validationSchema = Yup.object().shape({
 
 const LoginPage = ({ navigation }) => {
   const [obSecureText, setObSecureText] = useState(true);
+
+  const inValidForm = () => {
+    Alert.alert("Invalid Form", "Please provide all required fields!", [
+      { text: "Continue" },
+    ]);
+  };
 
   return (
     <ScrollView>
@@ -118,9 +125,15 @@ const LoginPage = ({ navigation }) => {
                 </View>
                 <Button
                   txt="LOGIN"
-                  onPress={isValid ? handleSubmit : () => {}}
+                  onPress={isValid ? handleSubmit : inValidForm}
                   isValid={isValid}
                 />
+                <Text
+                  style={styles.registerTxt}
+                  onPress={() => navigation.navigate("SignUp")}
+                >
+                  Register
+                </Text>
               </View>
             )}
           </Formik>

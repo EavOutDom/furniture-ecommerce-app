@@ -7,6 +7,7 @@ import NewRivals from './NewRivals';
 import LoginPage from './LoginPage';
 import Orders from './Orders';
 import Favorite from './Favorite';
+import SignUp from './SignUp';
 
 export {
   Home,
@@ -17,5 +18,6 @@ export {
   NewRivals,
   LoginPage,
   Orders,
-  Favorite
+  Favorite,
+  SignUp
 }

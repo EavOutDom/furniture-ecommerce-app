@@ -38,6 +38,10 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginLeft: 5,
     fontSize: SIZES.xSmall
+  },
+  registerTxt: {
+    textAlign: "center",
+    marginVertical: 10
   }
 });
 
